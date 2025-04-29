@@ -1,0 +1,72 @@
+.perguntas {
+	padding-top: 120px;
+	padding-bottom: 120px;
+}
+
+.perguntas h2 {
+	margin-bottom: 60px;
+}
+
+.perguntas dl > div {
+	border-radius: 4px;
+	padding: 20px;
+}
+
+.perguntas dl > div:nth-child(odd) {
+	background-color: var(--cor-1);
+}
+
+.perguntas button {
+	display: grid;
+	grid-template-columns: auto 1fr auto;
+	align-items: center;
+	gap: 8px;
+	width: 100%;
+	text-align: left;
+	border: none;
+	background: none;
+	cursor: pointer;
+}
+
+.perguntas button::before {
+	content: "";
+	display: inline-block;
+	height: 8px;
+	width: 12px;
+	background-color: var(--cor-p1);
+}
+
+.perguntas button::after {
+	content: "";
+	display: inline-block;
+	height: 6px;
+	width: 14px;
+	transition: .3s;
+	background: url('../../img/icones/seta-abrir.svg');
+}
+
+.perguntas button:hover::after, .perguntas button[aria-expanded="true"]::after {
+	transform: rotate(180deg);
+}
+
+.js .perguntas dd {
+	display: none;
+	max-width: 80ch;
+	padding-top: 16px;
+	padding-left: 20px;
+}
+
+.js .perguntas dd.ativa {
+	display: block;
+}
+
+@media (max-width: 800px) {
+	.perguntas {
+		padding-top: 60px;
+		padding-bottom: 60px;
+	}
+
+	.perguntas h2 {
+		margin-bottom: 40px;
+	}
+}
